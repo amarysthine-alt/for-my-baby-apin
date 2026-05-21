@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>for apin ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f0f14;
+    overflow-x:hidden;
+    color:white;
+}
+
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://i.pinimg.com/originals/7f/52/31/7f5231290a5c4e4bdf0f4e5cb9c3c6f4.gif');
+    background-size:cover;
+    opacity:0.2;
+    z-index:-2;
+}
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to bottom,#0f0f14,#161623);
+    z-index:-1;
+}
+
+.container{
+    width:90%;
+    max-width:800px;
+    margin:auto;
+    padding:50px 0;
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.sub{
+    opacity:.7;
+    margin-bottom:40px;
+}
+
+.counter{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:30px;
+    backdrop-filter:blur(10px);
+}
+
+.counter h2{
+    margin-bottom:10px;
+}
+
+.love-btn{
+    margin-top:25px;
+    padding:15px 35px;
+    border:none;
+    border-radius:999px;
+    background:#ff4d88;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.love-btn:hover{
+    transform:scale(1.05);
+}
+
+.letter{
+    margin-top:40px;
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+    text-align:left;
+    line-height:1.9;
+    backdrop-filter:blur(10px);
+    animation:fadeIn 2s ease;
+}
+
+.typing{
+    white-space:pre-line;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.heart{
+    position:fixed;
+    color:#ff4d88;
+    animation:fall linear forwards;
+    top:-10px;
+    z-index:999;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+}
+
+.footer{
+    margin-top:40px;
+    opacity:.6;
+    font-size:.9rem;
+}
+
+audio{
+    display:none;
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="overlay"></div>
+
+<div class="container">
+
+    <h1>for apin ❤️</h1>
+    <p class="sub">a little place made with love</p>
+
+    <div class="counter">
+        <h2>our time together ⏳</h2>
+        <p id="time"></p>
+    </div>
+
+    <button class="love-btn" onclick="showLove()">
+        i love you ❤️
+    </button>
+
+    <div class="letter">
+        <div class="typing" id="typing"></div>
+    </div>
+
+    <div class="footer">
+        made with love by your girl 🐻
+    </div>
+
+</div>
+
+<iframe 
+style="display:none"
+src="https://www.youtube.com/embed/0Q18kWjM8gQ?autoplay=1&loop=1&playlist=0Q18kWjM8gQ">
+</iframe>
+
+<script>
+
+const startDate = new Date("2025-04-02");
+
+function updateCounter(){
+    const now = new Date();
+    const diff = now - startDate;
+
+    const seconds = Math.floor(diff / 1000);
+    const minutes = Math.floor(diff / (1000*60));
+    const hours = Math.floor(diff / (1000*60*60));
+    const days = Math.floor(diff / (1000*60*60*24));
+    const months = Math.floor(days / 30);
+
+    document.getElementById("time").innerHTML = `
+    ${seconds.toLocaleString()} Detik<br>
+    ${minutes.toLocaleString()} Menit<br>
+    ${hours.toLocaleString()} Jam<br>
+    ${days} Hari<br>
+    ${months} Bulan
+    `;
+}
+
+setInterval(updateCounter,1000);
+
+const text = `
+alloww cinta ku apin.. 🐻❤️
+
+pertama-tama, aku mau bilang makasih ya…
+udah mau bertahan dan sabar sama semua sikap aku sampai sekarang.
+
+aku seneng banget bisa punya pacar kayak kamu.
+di mata aku, kamu itu indah banget.
+
+makasih karena selalu ada buat aku,
+selalu nemenin aku,
+dan bikin aku ngerasa disayang :3
+
+maaf ya kalau aku sering ngambek atau cemburuan hehe.
+
+aku cuma mau kamu tau...
+
+di mata aku,
+kamu itu orang yang sangat berharga.
+
+mungkin kamu sering ngerasa capek,
+ngerasa kurang,
+atau mikir kalau diri kamu belum sempurna.
+
+tapi buat aku,
+kamu udah lebih dari cukup.
+
+aku bangga sama kamu,
+sesederhana apa pun hal yang kamu lakuin.
+
+dan kalau suatu hari nanti
+kamu lupa betapa berharganya diri kamu...
+
+biar aku yang ngingetin terus:
+
+kamu hebat,
+kamu penting,
+dan kamu sangat berarti buat aku.
+
+i love you my boy ❤️
+`;
+
+let i = 0;
+
+function typingEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect,25);
+    }
+}
+
+typingEffect();
+
+function showLove(){
+    alert("i love you more than yesterday ❤️");
+}
+
+function createHeart(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = Math.random()*20 + 15 + "px";
+    heart.style.animationDuration = Math.random()*3 + 2 + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },5000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
